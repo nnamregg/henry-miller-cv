@@ -38,6 +38,11 @@ a {
     color: var(--neutral-900);
 }
 
+.text-highlight {
+    color: var(--rose-500);
+    font-weight: 600;
+}
+
 .shadow {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
 }
@@ -150,7 +155,6 @@ footer {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    /* padding: 15rem; */
 }
 
 .home_content__picture {
@@ -372,7 +376,6 @@ Acuarelas
     color: var(--rose-400);
     margin-bottom: 0;
     font-size: 1.2rem;
-    /* border: 1px solid var(--rose-300); */
 }
 .watercolors_grid__item p {
     color: var(--neutral-400);
@@ -392,6 +395,214 @@ Cine
     background-attachment:fixed;
 }
 
+.movies_content {
+    width: 80%;
+    margin: 0 auto;
+    padding: 5rem 0 10rem;
+}
+
+.movies_section {
+    width: 60%;
+    margin: 3rem auto;
+    border: 1px solid var(--neutral-800);
+    border-radius: 5px;
+}
+
+.movies_section:hover {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.movies_section__header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.movies_section__header h1 {
+    color: var(--rose-400);
+    margin: 2rem;
+}
+
+.movies_section__img_container {
+    margin: 0 auto;
+    border-radius: 100%;
+    overflow: hidden;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.movies_section__img_container img {
+    margin: 0 auto;
+}
+
+.movies_section__cards {
+    width: 90%;
+    margin: 1rem auto;
+}
+
+.movie_card {
+    padding: 2rem 1rem;
+    display: flex;
+    /* overflow: hidden; */
+    height: 20rem;
+    border-top: 1px solid var(--neutral-800);
+}
+
+.movies_section__cards .movie_card:last-of-type {
+    border-bottom: 1px solid var(--neutral-800);
+}
+
+.movie_card__img {
+    flex: 0 0 30%;
+    max-height: 100%;
+    background-size: cover;
+}
+
+#card_img_odyssey {
+    background: no-repeat center url("./img/movies/henry_miller_odyssey.jpg");
+}
+
+#card_img_reds {
+    background: no-repeat center url("./img/movies/reds.jpg");
+}
+
+#card_img_notdead {
+    background: no-repeat center url("./img/movies/notdead.jpg");
+}   
+
+#card_img_prophet {
+    background: no-repeat center url("./img/movies/prophet.jpg");
+}   
+
+#card_img_tropic {
+    background: no-repeat center url("./img/movies/tropic_of_cancer.jpg");
+}
+
+#card_img_clichy {
+    background: no-repeat center url("./img/movies/quiet_days.jpg");
+}
+
+#card_img_henry_june {
+    background: no-repeat center url("./img/movies/henry_and_june.jpg");
+}
+
+#card_img_stanza {
+    background: no-repeat center url("./img/movies/stanza.jpg");
+}
+
+#card_img_quiet_days_90 {
+    background: no-repeat center url("./img/movies/quiet_days_1990.jpg");
+}
+
+#card_img_mara {
+    background: no-repeat center url("./img/movies/mara.jpg");
+}
+
+.movie_card_content {
+    padding-left: 2rem;
+    padding-right: 1rem;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: var(--rose-300) var(--neutral-800);
+}
+
+.movie_card_content::-webkit-scrollbar-button {
+    display: none;
+}
+
+.movie_card_content::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.movie_card_content::-webkit-scrollbar-track {
+    background: var(--neutral-800);
+}
+
+.movie_card_content::-webkit-scrollbar-thumb {
+    background-color: var(--rose-300);
+    border-radius: 20px;
+}
+
+.movie_card_content header h1 {
+    color: var(--rose-400);
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.movie_card_content header span {
+    font-size: .85rem;
+}
+
+.movie_card_content header span:first-of-type {
+    display: block;
+    margin-bottom: .5rem;
+    color: var(--neutral-400);
+}
+
+.movie_card_content .movie_card_genre {
+    width: fit-content;
+    padding: .2rem .4rem;
+    border-radius: 5px;
+    margin: .5rem .5rem .5rem 0;
+    font-size: .7rem;
+    font-weight: 600;
+    letter-spacing: .2rem;
+    text-transform: uppercase;
+    background-color: var(--rose-300);
+}
+
+.movie_card_content h2 {
+    font-size: 1rem;
+    color: var(--neutral-100);
+}
+
+.movie_card_content p {
+    font-size: .8rem;
+    line-height: 1.2rem;
+    color: var(--neutral-400);
+    text-align: justify;
+}
+
+.movie_card_credits {
+    display: flex;
+    align-items: center;
+    margin: .4rem auto;
+}
+
+.movie_card_credits .director {
+    margin-top: 1rem;
+}
+
+.movie_card_credits span:first-of-type {
+    margin-right: 10px;
+}
+
+.movie_card_credits span:not(:first-of-type) {
+    font-size: .9rem;
+    color: var(--neutral-100);
+    margin-right: 15px;
+}
+
+
+.movie_card_ico {
+    color: var(--rose-400);
+    font-size: 1rem;
+}
+
+.movies_section__arrow {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.movies_toggle {
+    font-size: 1.8rem;
+    color: var(--rose-300);
+}
+
+.movies_toggle:hover {
+    color: var(--rose-500);
+    cursor: pointer;
+}
 
 /* 
 Entrevista

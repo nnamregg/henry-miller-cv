@@ -1,6 +1,22 @@
 // NAVBAR
 
+// Clases dinámicas para link actual
+
+window.onload = function(e) {
+    const navLinks = document.querySelectorAll(".nav_items__link")
+    
+    for (let link of navLinks) {
+        const anchor = link.firstChild
+        if (anchor == window.location.href) {
+        anchor.classList.add('active')
+        anchor.setAttribute('aria-current','page')
+        }
+    }
+}
+
+
 // Esconder/mostrar navbar al scrollear
+
 window.onscroll = function(e) { 
     const scrollY = window.pageYOffset || document.documentElement.scrollTop;
     const navbar = document.getElementById('navbar');
@@ -49,15 +65,4 @@ window.onscroll = function(e) {
     this.lastScroll = scrollY ;
 }
 
-// Clases dinámicas para link actual de navbar
-const navLinks = document.querySelectorAll(".nav_items__link")
-    // console.log(navLinks)
-for (let link of navLinks) {
-    console.log('link -> ', link)
-    const anchor = link.firstChild
-    console.log('anchor -> ', anchor)
-    if (anchor == window.location.href) {
-       anchor.classList.add('active')
-       anchor.setAttribute('aria-current','page')
-    }
-}
+
