@@ -64,7 +64,7 @@ button {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 500;
+    z-index: 5;
     transition: transform ease-in .2s, background-color ease-in .2s;
     -webkit-transition: transform ease-in .2s, background-color ease-in .2s;
     -moz-transition: transform ease-in .2s, background-color ease-in .2s;
@@ -388,6 +388,60 @@ Acuarelas
 .watercolors_grid__item p {
     color: var(--neutral-400);
     font-size: .9em;
+}
+
+.watercolors_modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.watercolors_modal__content {
+    background-color: rgba(23, 23, 23, .8);
+    backdrop-filter: blur(15px);
+    margin: 2.4rem auto;
+    padding: 20px;
+    border: 1px solid var(--neutral-800);
+    width: 80%;
+    height: 90%;
+    position: relative;
+    text-align: center;
+}
+
+#watercolors_modal__img {
+    background: no-repeat center;
+    width: 100%;
+    height: 95%;
+}
+
+#watercolors_modal__txt {
+    margin: 1rem auto;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--rose-400);
+}
+
+.watercolors_modal__btn {
+    position: absolute;
+    right: .4rem;
+    top: .4rem;
+    cursor: pointer;
+}
+
+.watercolors_modal__btn span {
+    font-size: 1.2rem;
+    color: var(--neutral-400);
+}
+
+.watercolors_modal__btn span:hover {
+    color: var(--rose-400);
 }
 
 /* 
