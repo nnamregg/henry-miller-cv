@@ -26,6 +26,10 @@ a {
     text-decoration: none;
 }
 
+button {
+    all: unset;
+}
+
 .bg-dark {
     background-color: var(--neutral-900);
 }
@@ -295,6 +299,10 @@ footer {
     line-height: 1.8rem;
 }
 
+.biblio_section__list li li{
+    margin-top: 0;
+}
+
 .biblio_title {
     font-style: italic;
 }
@@ -435,14 +443,16 @@ Cine
 }
 
 .movies_section__cards {
-    width: 90%;
+    max-width: 90%;
     margin: 1rem auto;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 800ms ease-out;
 }
 
 .movie_card {
     padding: 2rem 1rem;
     display: flex;
-    /* overflow: hidden; */
     height: 20rem;
     border-top: 1px solid var(--neutral-800);
 }
@@ -529,6 +539,10 @@ Cine
     margin: 0;
 }
 
+.movie_card_content header h1:hover {
+    text-decoration: dotted underline;
+}
+
 .movie_card_content header span {
     font-size: .85rem;
 }
@@ -589,19 +603,43 @@ Cine
     font-size: 1rem;
 }
 
-.movies_section__arrow {
+.movies_section_btn {
     width: fit-content;
-    margin: 0 auto;
+    margin: 2rem auto;
 }
 
-.movies_toggle {
-    font-size: 1.8rem;
-    color: var(--rose-300);
+.movies_collapsible, .movies_collapsible span {
+    transition: transform ease-in 50ms, ease-out 50ms;
+    -webkit-transition: transform ease-in 50ms, ease-out 50ms;
+    -moz-transition: transform ease-in 50ms, ease-out 50ms;
+    -o-transition: transform ease-in 50ms, ease-out 50ms;
 }
 
-.movies_toggle:hover {
-    color: var(--rose-500);
+.movies_collapsible {
     cursor: pointer;
+    padding: .3rem 1.8rem;
+    border-bottom: 2px solid var(--neutral-800);
+    overflow: hidden;
+}
+
+.movies_collapsible:hover {
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    border-color: var(--rose-400);
+    transform: scale(1.04);
+}
+
+.movies_collapsible:hover span {
+    color: var(--rose-400);
+    transform: scale(1.04);
+}
+
+.movies_collapsible.active span {
+    transform: rotate(180deg);
+}
+
+.movies_collapsible span {
+    color: var(--rose-300);
+    pointer-events: none;
 }
 
 /* 
