@@ -71,13 +71,55 @@ button {
     -o-transition: transform ease-in .2s, background-color ease-in .2s;
 }
 
+#navbar_toggle {
+    cursor: pointer;
+}
+
+#navbar_toggle[aria-expanded='true'] {
+    padding: 0 .25em;
+}
+
+#navbar_toggle[aria-expanded='true'] .navbar_toggle_btn:first-child {
+    display: none;
+}
+
+#navbar_toggle[aria-expanded='true'] .navbar_toggle_btn:last-child {
+    display: block;
+}
+
+.navbar_toggle_btn:last-child {
+    color: var(--neutral-400);
+    display: none;
+}
+
+#nav_menu {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(23, 23, 23, .8);
+    backdrop-filter: blur(10px);
+    visibility: hidden;
+}
+
+#navbar_toggle[aria-expanded='true'] + #nav_menu {
+    background-color: rgba(0, 0, 0, 0.9);
+    opacity: 1;
+    visibility: visible;
+    z-index: -1;
+}
+
 .nav_items {
     margin: 0;
-    padding: 0 2rem;
-    width: 40vw;
+    padding: 10rem 0;
+    height: 100%;
+    /* width: 40vw; */
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    font-size: .8rem;
+    align-items: center;
+    font-size: 1rem;
     font-weight: 600;
 }
 
@@ -94,6 +136,10 @@ button {
 .nav_items__link .active {
     color: var(--rose-500);
     text-decoration: wavy underline;
+}
+
+#navbar div:last-of-type {
+    display: none;
 }
 
 /* 
@@ -150,13 +196,13 @@ footer {
 }
 
 .home_header__heading h2 {
-    margin: 0 auto;
-    font-size: 2.4rem;
+    margin: 1.2rem auto;
+    font-size: 1.4rem;
 }
 
 .home_content {
     width: 100%;
-    height: 100vh;
+    height: auto;
     background-color: var(--neutral-900);
     display: flex;
     flex-direction: column;
@@ -167,24 +213,28 @@ footer {
 .home_content__picture {
     width: 300px;
     height: 300px;
-    margin-top: 4rem;
+    margin: 4rem auto 2rem;
     border-radius: 100%;
     background: no-repeat center url("img/henrymiller.jpg");
 }
 
 .home_content p {
     color: var(--neutral-100);
-    margin: 0 auto;
-    max-width: 50%;
+    margin: 1.4rem auto;
+    max-width: 80%;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: .9rem;
+    line-height: 1.4rem;
 }
 
 .home_content__links {
     list-style: none;
-    display: flex;
+    padding: 0;
     width: auto;
     margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .home_content__links span {
@@ -853,6 +903,75 @@ Entrevista
     margin: 2.8rem auto;
 }
 
-@media (min-width: 1280px) {
 
+/*
+    Desktop
+*/    
+@media screen and (min-width: 1200px) {
+    #navbar_logo {
+        width: 150px;
+    }
+
+    #nav_menu {
+        width: 40vw;
+        position: relative;
+        background: none;
+        backdrop-filter: none;
+    }
+
+    #nav_menu + .nav_items {
+        flex-direction: row;
+    }
+
+    #navbar_toggle,
+    #navbar_toggle[aria-expanded='true'] {
+        display: none;
+    }
+
+    #nav_menu,
+    #navbar_toggle[aria-expanded='true'] + #nav_menu {
+        visibility: visible;
+        opacity: 1;
+        position: static;
+        display: block;
+        height: 100%;
+    }
+
+    .nav_items,
+    #navbar_toggle[aria-expanded='true'] + #nav_menu .nav_items {
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        position: static;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+    }
+
+    #navbar div:last-of-type {
+        display: block;
+    }
+
+    .nav_items {
+        font-size: .8rem;
+
+    }
+
+    /* home */
+    .home_header__heading h2 {
+        margin: 0 auto;
+        font-size: 2.4rem;
+    }
+
+    .home_content p {
+        max-width: 50%;
+        font-size: 1.4rem;
+        line-height: 2rem;
+    }
+
+    .home_content__links {
+        flex-direction: row;
+        width: auto;
+        margin-bottom: 3rem;
+    }
 }
