@@ -25,12 +25,10 @@ window.onscroll = function(e) {
 
     const navAnimIn = () => {
         navbar.style.transform = "translateY(0)"
-        // logo.style.transform = "rotate(0)"
     }
     
     const navAnimOut = () => {
         navbar.style.transform = "translateY(-100%)"
-        // logo.style.transform = "rotate(180deg)"
     }
 
     scrollY <= this.lastScroll

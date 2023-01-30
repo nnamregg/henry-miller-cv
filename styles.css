@@ -355,15 +355,71 @@ footer {
 
 .biblio_title {
     font-style: italic;
+    font-weight: 600;
 }
-
+/* 
 a.biblio_title {
     color: var(--rose-500);
-    font-weight: 600;
 }
 
 a.biblio_isbn {
     font-weight: 600;
+} */
+
+.biblio_span_title {
+    font-style: italic;
+    font-weight: 600;
+    color: var(--rose-500);
+    cursor: pointer;
+    position: relative;
+}
+
+span.biblio_isbn {
+    font-weight: 600;
+}
+
+#bookPopup {
+    visibility: hidden;
+    position: sticky;
+    top: 6rem;
+    background-color: var(--neutral-900);
+    height: 30%;
+    width: 25%;
+    padding: 1.2rem .8rem;
+    border: 2px dashed var(--neutral-800);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    overflow: hidden;
+}
+
+#bookPopup.show {
+    visibility: visible;
+}
+
+#bookPopupBtn {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+}
+
+#bookPopupBtn > span {
+    font-size: 1rem;
+    color: var(--neutral-400);
+    cursor: pointer;
+}
+
+#bookPopupBtn > span:hover {
+    color: var(--neutral-100);
+}
+
+#bookPopup #bookPopupTitle {
+    font-size: 1.2rem;
+    color: var(--rose-400);
+    margin: 0 0 1.2rem;
+}
+
+#bookPopup > #bookPopupImg {
+    max-width: 100%;
 }
 
 /* 
