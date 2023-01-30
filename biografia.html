@@ -16,22 +16,35 @@
     <!-- Barra de navegación -->
     <nav id="navbar">
         <a href="./index.html">
-            <img id="navbar-logo" src="img/Henry_Miller_signature.svg" alt="Henry Miller Signature Logo" width="150">
+            <img id="navbar_logo" src="img/Henry_Miller_signature.svg" alt="Henry Miller Signature Logo" width="100">
         </a>
-        <ul class="nav_items">
-            <li class="nav_items__link text-dark"><a href="./biografia.html">Biografía</a></li>
-            <li class="nav_items__link text-dark"><a href="./bibliografia.html">Bibliografía</a></li>
-            <li class="nav_items__link text-dark"><a href="./acuarelas.html">Acuarelas</a></li>
-            <li class="nav_items__link text-dark"><a href="./cine.html">Cine</a></li>
-            <li class="nav_items__link text-dark"><a href="./interview.html">Entrevista</a></li>
-        </ul>
+
+        <button type="button" id="navbar_toggle" aria-controls="nav_menu" aria-label="Toggle navbar menu" aria-expanded="false">
+            <span class="material-symbols-outlined navbar_toggle_btn">
+                menu
+            </span>
+            <span class="material-symbols-outlined navbar_toggle_btn">
+                close
+            </span>
+        </button>
+
+        <div id="nav_menu" aria-labelledby="navbar_toggle">
+            <ul class="nav_items">
+                <li class="nav_items__link text-light"><a href="./biografia.html">Biografía</a></li>
+                <li class="nav_items__link text-light"><a href="./bibliografia.html">Bibliografía</a></li>
+                <li class="nav_items__link text-light"><a href="./acuarelas.html">Acuarelas</a></li>
+                <li class="nav_items__link text-light"><a href="./cine.html">Cine</a></li>
+                <li class="nav_items__link text-light"><a href="./interview.html">Entrevista</a></li>
+            </ul>
+        </div>
+        
         <div>
-            <input type="search" name="Buscador" id="search-input" placeholder="Buscar">
+            <!-- <input type="search" name="Buscador" id="search-input" placeholder="Buscar">
             <button>
                 <span>
                     ICO
                 </span>
-            </button>
+            </button> -->
         </div>
     </nav>
 

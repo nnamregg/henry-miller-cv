@@ -114,7 +114,6 @@ button {
     margin: 0;
     padding: 10rem 0;
     height: 100%;
-    /* width: 40vw; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -273,6 +272,7 @@ footer {
     position: sticky;
     height: fit-content;
     top: 120px;
+    display: none;
 }
 
 .sticky_sidebar h1 {
@@ -316,21 +316,15 @@ footer {
     Estilos comunes para biografia y bibliografia
 */
 .bio_main_container, .biblio_main_container {
-    max-width: 80%;
+    width: 100%;
     margin: 0 auto;
-    padding: 5rem 0;
-    position: relative;
-    display: flex;
+    padding: 2rem 1rem;
 }
 
 .bio_content_container, .biblio_content_container {
     height: 100%;
     width: auto;
     margin-bottom: 10rem;
-}
-
-.bio_section, .biblio_section {
-    padding: 0 5rem;
 }
 
 .bio_section h1, .biblio_section h1 {
@@ -407,14 +401,6 @@ footer {
     font-style: italic;
     font-weight: 600;
 }
-/* 
-a.biblio_title {
-    color: var(--rose-500);
-}
-
-a.biblio_isbn {
-    font-weight: 600;
-} */
 
 .biblio_span_title {
     font-style: italic;
@@ -430,12 +416,14 @@ span.biblio_isbn {
 
 #bookPopup {
     visibility: hidden;
-    position: sticky;
-    top: 6rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: var(--neutral-900);
-    height: 30%;
-    width: 25%;
-    padding: 1.2rem .8rem;
+    height: fit-content;
+    width: 50vw;
+    padding: 1.4rem .8rem;
     border: 2px dashed var(--neutral-800);
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -448,7 +436,7 @@ span.biblio_isbn {
 
 #bookPopupBtn {
     position: absolute;
-    top: 10px;
+    top: 5px;
     right: 5px;
 }
 
@@ -473,7 +461,7 @@ span.biblio_isbn {
 }
 
 /* 
-Acuarelas
+    Acuarelas
 */
 .watercolors_header {
     width: 100%;
@@ -485,15 +473,15 @@ Acuarelas
 }
 
 .watercolors_content {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
-    padding: 5rem 0 10rem;
+    padding: 5rem 1.2rem 10rem;
 }
 
 .watercolors_subtitle {
     max-width: 80%;
     margin: 2rem auto 5rem;
-    font-size: 2rem;
+    font-size: 1.6rem;
     text-align: center;
     color: var(--neutral-400);
 }
@@ -502,7 +490,7 @@ Acuarelas
     margin: 2rem;
     display: grid;
     gap: 5rem;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(1, 1fr);
 }
 
 .watercolors_grid__item {
@@ -562,11 +550,11 @@ Acuarelas
 .watercolors_modal__content {
     background-color: rgba(23, 23, 23, .8);
     backdrop-filter: blur(15px);
-    margin: 2.4rem auto;
-    padding: 20px;
+    margin: 0 auto;
+    padding: 30px;
     border: 1px solid var(--neutral-800);
-    width: 80%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
     position: relative;
     text-align: center;
 }
@@ -601,7 +589,7 @@ Acuarelas
 }
 
 /* 
-Cine
+    Cine
 */
 .movies_header {
     width: 100%;
@@ -615,13 +603,13 @@ Cine
 }
 
 .movies_content {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     padding: 5rem 0 10rem;
 }
 
 .movies_section {
-    width: 60%;
+    width: 90%;
     margin: 3rem auto;
     border: 1px solid var(--neutral-800);
     border-radius: 5px;
@@ -663,8 +651,7 @@ Cine
 
 .movie_card {
     padding: 2rem 1rem;
-    display: flex;
-    height: 20rem;
+    height: 35rem;
     border-top: 1px solid var(--neutral-800);
 }
 
@@ -673,8 +660,7 @@ Cine
 }
 
 .movie_card__img {
-    flex: 0 0 30%;
-    max-height: 100%;
+    height: 40%;
     background-size: cover;
 }
 
@@ -719,9 +705,10 @@ Cine
 }
 
 .movie_card_content {
-    padding-left: 2rem;
+    padding-top: 1rem;
     padding-right: 1rem;
     overflow-y: scroll;
+    height: 60%;
     scrollbar-width: thin;
     scrollbar-color: var(--rose-300) var(--neutral-800);
 }
@@ -803,7 +790,7 @@ Cine
 }
 
 .movie_card_credits span:not(:first-of-type) {
-    font-size: .9rem;
+    font-size: .8rem;
     color: var(--neutral-100);
     margin-right: 15px;
 }
@@ -817,6 +804,7 @@ Cine
 .movies_section_btn {
     width: fit-content;
     margin: 2rem auto;
+    user-select: none;
 }
 
 .movies_collapsible, .movies_collapsible span {
@@ -868,7 +856,7 @@ Entrevista
 
 
 .interview_content {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     padding: 5rem 0 10rem;
 }
@@ -885,21 +873,28 @@ Entrevista
 }
 
 .interview_content h2 {
-    font-size: 1.8rem;
-    margin-top: 0;
+    font-size: 1.4rem;
+    margin-top: 1.2rem;
     margin-bottom: 2rem;
     color: var(--rose-300);
 }
 
 .interview_content p {
     color: var(--neutral-400);
-    max-width: 50%;
+    max-width: 80%;
     text-align: center;
     margin: 0 auto 5rem;
 }
 
 .interview_content__video {
-    width: fit-content;
+    position: relative;
+    margin: 2.8rem auto;
+    height: fit-content;
+}
+
+.interview_content__video > iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
     margin: 2.8rem auto;
 }
 
@@ -908,6 +903,7 @@ Entrevista
     Desktop
 */    
 @media screen and (min-width: 1200px) {
+    /* Navbar */
     #navbar_logo {
         width: 150px;
     }
@@ -957,7 +953,7 @@ Entrevista
 
     }
 
-    /* home */
+    /* Home */
     .home_header__heading h2 {
         margin: 0 auto;
         font-size: 2.4rem;
@@ -973,5 +969,100 @@ Entrevista
         flex-direction: row;
         width: auto;
         margin-bottom: 3rem;
+    }
+
+    .bio_main_container, .biblio_main_container {
+        max-width: 80%;
+        padding: 5rem 0;
+        position: relative;
+        display: flex;
+    }
+
+    .bio_section, .biblio_section {
+        padding: 0 5rem;
+    }
+
+    /* Biografia */
+    .sticky_sidebar {
+        display: block;
+    }
+
+
+    /* Bibliografia */
+    #bookPopup {
+        position: sticky;
+        top: 6rem;
+        left: 0;
+        transform: translate(0, 0);
+        height: 30%;
+        width: 25%;
+        padding: 1.2rem .8rem;
+    }
+
+    /* Acuarelas */
+    .watercolors_content {
+        width: 80%;
+        margin: 0 auto;
+        padding: 5rem 0 10rem;
+    }
+
+    .watercolors_subtitle {
+        font-size: 2rem;
+    }
+
+    .watercolors_grid {
+        margin: 2rem;
+        gap: 5rem;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .watercolors_modal__content {
+        margin: 2.4rem auto;
+        width: 80%;
+        height: 90%;
+    }
+
+    /* Cine */
+    .movies_content {
+        width: 80%;
+    }
+
+    .movies_section {
+        width: 60%;
+    }
+
+    .movie_card {
+        display: flex;
+        height: 20rem;
+    }
+
+    .movie_card__img {
+        flex: 0 0 30%;
+        height: 100%;
+        background-size: cover;
+    }
+
+    .movie_card_content {
+        padding-left: 2rem;
+        height: 100%;
+    }
+
+    .movie_card_credits span:not(:first-of-type) {
+        font-size: .9rem;
+    }
+
+    /* Entrevista */
+    .interview_content {
+        width: 80%;
+    }
+
+    .interview_content h2 {
+        font-size: 1.8rem;
+        margin-top: 0;
+    }
+
+    .interview_content p {
+        max-width: 50%;
+        margin: 0 auto 5rem;
     }
 }

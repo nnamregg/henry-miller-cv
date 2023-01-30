@@ -4,7 +4,6 @@ const navLinks = document.querySelectorAll('.nav_items__link')
 
 // Clases dinámicas para link actual
 window.onload = function(e) {
-    // const navLinks = document.querySelectorAll(".nav_items__link")
     if(!isMobile) {
         setNavLinksDark()
     }
@@ -17,9 +16,9 @@ window.onload = function(e) {
         }
     }
 
-    // console.log(window.innerWidth)
 }
 
+// Chequeo el ancho del viewport 
 let isMobile = window.innerWidth < 1200
 
 window.onresize = () => {
@@ -54,7 +53,6 @@ window.onscroll = function(e) {
     const navbar = document.getElementById('navbar');
     const logo = document.getElementById('navbar_logo');
     const burgerMenu = document.querySelector('.navbar_toggle_btn')
-    // const navLinks = document.querySelectorAll('.nav_items__link')
 
     const navAnimIn = () => {
         navbar.style.transform = "translateY(0)"
@@ -70,25 +68,27 @@ window.onscroll = function(e) {
 
     // Toggle background
     const addBackground = () => {
+        navbar.classList.add('bg-dark','shadow')
+
         logo.src = './img/Henry_Miller_signature_zinc-200.svg'
         
         burgerMenu.classList.remove('text-dark')
         burgerMenu.classList.add('text-light')
 
         if(!isMobile) {
-            navbar.classList.add('bg-dark','shadow')
             setNavLinksLight()
         }
     }
 
     const removeBackground = () => {
+        navbar.classList.remove('bg-dark','shadow')
+
         logo.src = './img/Henry_Miller_signature.svg'
 
         burgerMenu.classList.remove('text-light')
         burgerMenu.classList.add('text-dark')
 
         if(!isMobile) {
-            navbar.classList.remove('bg-dark','shadow')
             setNavLinksDark()
         }
     }
@@ -100,7 +100,7 @@ window.onscroll = function(e) {
     this.lastScroll = scrollY ;
 }
 
-// Menu toggler en mobile
+// Menu toggler para mobile
 const navbarToggle = navbar.querySelector('#navbar_toggle');
 let isNavbarExpanded = navbarToggle.getAttribute('aria-expanded') === 'true';
 
