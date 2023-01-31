@@ -198,9 +198,6 @@ footer {
     margin: 0 auto;
     padding: 2rem;
     text-align: center;
-}
-
-.home_header__heading h1,  h2 {
     color: var(--neutral-900)
 }
 
@@ -280,8 +277,13 @@ footer {
 }
 
 /* 
-    Estilos sticky sidebar
+    Estilos sticky sidebar / topbar
 */
+.sticky_sidebar__menu, .sticky_sidebar__submenu,
+.sticky_topbar__menu, .sticky_topbar__submenu {
+    list-style: none;
+}
+
 .sticky_sidebar {
     max-width: 250px;
     position: sticky;
@@ -299,7 +301,6 @@ footer {
 }
 
 .sticky_sidebar__menu {
-    list-style: none;
     padding-left: .8rem;
     border-left: 2px solid var(--neutral-800);
     font-size: .9rem;
@@ -323,8 +324,83 @@ footer {
 }
 
 .sticky_sidebar__submenu {
-    list-style: none;
     padding-left: .8rem;
+}
+
+.sticky_topbar {
+    width: 100%;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    background-color: var(--rose-300);
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    overflow: hidden;
+    z-index: 4;
+}
+
+.sticky_topbar__title {
+    padding: .4rem;
+    display: flex;
+    align-items: center;
+    color: var(--neutral-900);
+    background-color: var(--rose-400);
+    border-bottom: 1px solid var(--neutral-800);
+}
+
+.sticky_topbar__title span {
+    font-size: 1.4rem;
+}
+
+.sticky_topbar__title > span:first-of-type {
+    margin-right: .6rem;
+}
+
+.sticky_topbar__title > h1 {
+    margin: 0 auto 0 0;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: .4rem;
+}
+
+.sticky_topbar__toggler {
+    display: flex;
+    align-items: center;
+    transition: transform ease-in 50ms, ease-out 50ms;
+    -webkit-transition: transform ease-in 50ms, ease-out 50ms;
+    -moz-transition: transform ease-in 50ms, ease-out 50ms;
+    -o-transition: transform ease-in 50ms, ease-out 50ms;
+}
+
+.sticky_topbar__toggler.active {
+    transform: rotate(180deg);
+}
+
+.sticky_topbar__menu {
+    padding: 0;
+    margin: 0;
+    font-size: .8rem;
+    font-weight: 600;
+    color: var(--neutral-800);
+    max-height: 0;
+    transition: max-height 800ms ease-out;
+}
+
+.sticky_topbar__menu > li {
+    margin: 0;
+    padding: .6rem .4rem;
+    border-bottom: 1px solid var(--rose-400);
+}
+
+.sticky_topbar__menu > li:last-of-type {
+    border-bottom: none;
+}
+
+.sticky_topbar__submenu {
+    padding-left: 1rem;
+}
+
+.sticky_topbar__submenu > li {
+    margin: .4rem 0;
 }
 
 /* 
@@ -346,6 +422,10 @@ footer {
     color: var(--rose-400);
     font-size: 2rem;
     font-weight: 600;
+}
+
+.bio_section h2, .biblio_section h2 {
+    color: var(--rose-300);
 }
 
 /*
@@ -1020,6 +1100,15 @@ Entrevista
         margin-bottom: 3rem;
     }
 
+    /* Biografia / Bibliografia */
+    .sticky_sidebar {
+        display: block;
+    }
+
+    .sticky_topbar {
+        display: none;
+    }
+
     .bio_main_container, .biblio_main_container {
         max-width: 80%;
         padding: 5rem 0;
@@ -1034,11 +1123,6 @@ Entrevista
     #bookPopup {
         width: 25%;
         height: 30%;
-    }
-
-    /* Biografia */
-    .sticky_sidebar {
-        display: block;
     }
 
     /* Acuarelas */

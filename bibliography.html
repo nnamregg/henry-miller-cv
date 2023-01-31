@@ -30,14 +30,14 @@
 
         <div id="nav_menu" aria-labelledby="navbar_toggle">
             <ul class="nav_items">
-                <li class="nav_items__link"><a href="./biografia.html">Biografía</a></li>
-                <li class="nav_items__link"><a href="./bibliografia.html">Bibliografía</a></li>
-                <li class="nav_items__link"><a href="./acuarelas.html">Acuarelas</a></li>
-                <li class="nav_items__link"><a href="./cine.html">Cine</a></li>
+                <li class="nav_items__link"><a href="./biography.html">Biografía</a></li>
+                <li class="nav_items__link"><a href="./bibliography.html">Bibliografía</a></li>
+                <li class="nav_items__link"><a href="./watercolors.html">Acuarelas</a></li>
+                <li class="nav_items__link"><a href="./movies.html">Cine</a></li>
                 <li class="nav_items__link"><a href="./interview.html">Entrevista</a></li>
             </ul>
         </div>
-        
+
         <div>
             <!-- <input type="search" name="Buscador" id="search-input" placeholder="Buscar">
             <button>
@@ -51,6 +51,46 @@
     <header class="page_header biblio_header">
         <h1>Bibliografía</h1>
     </header>
+
+    <div class="sticky_topbar">
+        <div class="sticky_topbar__title">
+            <span class="material-symbols-outlined">
+                list
+            </span>
+            <h1>Contenidos</h1>
+            <button type="button" class="sticky_topbar__toggler">
+                <span class="material-symbols-outlined">
+                    expand_more
+                </span>
+            </button>
+        </div>
+        <ul class="sticky_topbar__menu">
+            <li>
+                <a href="#books_and_cols">Libros y colecciones</a>
+            </li>
+            <li>
+                <a href="#pamphlets">Folletos y tiradas pequeñas</a>
+            </li>
+            <li>
+                <a href="#plays">Obras de teatro</a>
+            </li>  
+            <li>
+                <a href="#correspondence">Correspondencia</a>
+            </li>  
+            <li>
+                <a href="#posthumous">Publicaciones póstumas</a>
+            </li>    
+            <li>
+                <a href="#unpublished">Obra inédita</a>
+            </li>    
+            <li>
+                <a href="#discography">Discografía</a>
+            </li>    
+            <li>
+                <a href="#references">Referencias</a>
+            </li>    
+        </ul>
+    </div>
 
     <main class="biblio_main_container">
         <aside class="sticky_sidebar">
@@ -327,6 +367,8 @@
     </footer>
 
     <script src="./js/index.js"></script>
-    <script src="./js/biblio.js"></script>
+    <script src="./js/book_popup.js"></script>
+    <script src="./js/contents_topbar.js"></script>
+
 </body>
 </html>

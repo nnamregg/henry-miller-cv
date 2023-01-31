@@ -30,14 +30,14 @@
 
         <div id="nav_menu" aria-labelledby="navbar_toggle">
             <ul class="nav_items">
-                <li class="nav_items__link"><a href="./biografia.html">Biografía</a></li>
-                <li class="nav_items__link"><a href="./bibliografia.html">Bibliografía</a></li>
-                <li class="nav_items__link"><a href="./acuarelas.html">Acuarelas</a></li>
-                <li class="nav_items__link"><a href="./cine.html">Cine</a></li>
+                <li class="nav_items__link"><a href="./biography.html">Biografía</a></li>
+                <li class="nav_items__link"><a href="./bibliography.html">Bibliografía</a></li>
+                <li class="nav_items__link"><a href="./watercolors.html">Acuarelas</a></li>
+                <li class="nav_items__link"><a href="./movies.html">Cine</a></li>
                 <li class="nav_items__link"><a href="./interview.html">Entrevista</a></li>
             </ul>
         </div>
-        
+
         <div>
             <!-- <input type="search" name="Buscador" id="search-input" placeholder="Buscar">
             <button>
@@ -51,6 +51,68 @@
     <header class="page_header bio_header">
         <h1>Biografía</h1>
     </header>
+
+    <div class="sticky_topbar">
+        <div class="sticky_topbar__title">
+            <span class="material-symbols-outlined">
+                list
+            </span>
+            <h1>Contenidos</h1>
+            <button type="button" class="sticky_topbar__toggler">
+                <span class="material-symbols-outlined">
+                    expand_more
+                </span>
+            </button>
+        </div>
+        <ul class="sticky_topbar__menu">
+            <li>
+                <a href="#early_life">Vida temprana</a>
+            </li>
+            <li>
+                <a href="#career">Carrera</a>
+                <ul class="sticky_topbar__submenu">
+                    <li>
+                        <a href="#career_brooklyn">Brooklyn, 1917-1930</a>
+                    </li>
+                    <li>
+                        <a href="#career_paris">París, 1930-1939</a>
+                    </li>
+                    <li>
+                        <a href="#career_greece">Grecia, 1939-1940</a>
+                    </li>
+                    <li>
+                        <a href="#career_california">California, 1942-1980</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#death">Muerte</a>
+            </li>  
+            <li>
+                <a href="#publications">Publicación en EE. UU. de obras previamente prohibidas</a>
+            </li>  
+            <li>
+                <a href="#watercolors">Acuarelas</a>
+            </li>    
+            <li>
+                <a href="#lit_archives">Archivos literarios</a>
+            </li>    
+            <li>
+                <a href="#lit_references">Referencias literarias</a>
+            </li>    
+            <li>
+                <a href="#movies">Películas</a>
+                <ul class="sticky_topbar__submenu">
+                    <li>
+                        <a href="#movies_miller">Miller como él mismo</a>
+                    </li>
+                    <li>
+                        <a href="#movies_actors">Actores que interpretan a Miller</a>
+                    </li>
+                </ul>
+            </li>    
+        </ul>
+    </div>
 
     <main class="bio_main_container">
         <aside class="sticky_sidebar">
@@ -201,5 +263,6 @@
     </footer>
 
     <script src="./js/index.js"></script>
+    <script src="./js/contents_topbar.js"></script>
 </body>
 </html>
