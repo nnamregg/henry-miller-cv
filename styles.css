@@ -34,6 +34,10 @@ button {
     background-color: var(--neutral-900);
 }
 
+.bg-blur {
+    background-color: rgba(230, 230, 230, .8);
+}
+
 .text-light {
     color: var(--neutral-50);
 }
@@ -126,6 +130,7 @@ button {
     list-style: none;
     text-transform: uppercase;
     letter-spacing: 3px;
+    color: var(--neutral-100);
 }
 
 .nav_items__link a:hover {
@@ -166,17 +171,27 @@ footer {
     font-size: .8rem;
 }
 
+.page_header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.page_header:not(.home_header) {
+    height: 40vh;
+}
+
+.page_header:not(.home_header) h1 {
+    margin: 0 auto;
+}
+
 /* 
     Home
 */
-.home_header {
-    width: 100%;
+.page_header.home_header {
     height: 100vh;
-    background: no-repeat center url("img/home_header_bg.jpg");
-    background-size: cover;
-    background-attachment:fixed;
-    display: flex;
-    align-items: center;
+    background: center / cover no-repeat fixed url("img/home_header_bg.jpg");
 }
 
 .home_header__heading {
@@ -190,7 +205,7 @@ footer {
 }
 
 .home_header__heading h1 {
-    margin: 20rem auto 0;
+    margin: 12rem auto 0;
     font-size: 3.5rem;
 }
 
@@ -336,18 +351,9 @@ footer {
 /*
     Biografia
 */
-.bio_header {
-    width: 100%;
-    height: 50%;
-    padding: 8rem;
+.page_header.bio_header {
     color: var(--neutral-50);
-    background: linear-gradient(rgb(72,0,72,0.5), rgb(192,72,72,0.5)), no-repeat bottom url("img/bio_header.jpg");
-    background-size: cover;
-    background-attachment:fixed;
-}
-
-.bio_section h2 {
-    color: var(--rose-300);
+    background: linear-gradient(rgb(72,0,72,0.5), rgb(192,72,72,0.5)), center / cover no-repeat fixed url("img/bio_header.jpg");
 }
 
 .bio_section p {
@@ -374,13 +380,9 @@ footer {
 /*
     Bibliografia
 */
-.biblio_header {
-    width: 100%;
-    height: 50%;
-    padding: 8rem;
+.page_header.biblio_header {
     color: var(--neutral-50);
-    background: linear-gradient(rgb(72,0,72,0.5), rgb(192,72,72,0.5)), no-repeat center url("img/biblio_header.jpg");
-    background-size: cover;
+    background: linear-gradient(rgb(72,0,72,0.5), rgb(192,72,72,0.5)), bottom / cover no-repeat fixed url("img/biblio_header.jpg");
 }
 
 .biblio_section__list {
@@ -463,13 +465,9 @@ span.biblio_isbn {
 /* 
     Acuarelas
 */
-.watercolors_header {
-    width: 100%;
-    height: 50%;
-    padding: 8rem;
+.page_header.watercolors_header {
     color: var(--rose-400);
-    background: no-repeat center url("img/watercolors_header.jpg");
-    background-size: cover;
+    background: center / cover no-repeat fixed url("img/watercolors_header.jpg");
 }
 
 .watercolors_content {
@@ -487,7 +485,8 @@ span.biblio_isbn {
 }
 
 .watercolors_grid {
-    margin: 2rem;
+    width: 90%;
+    margin: 2rem auto;
     display: grid;
     gap: 5rem;
     grid-template-columns: repeat(1, 1fr);
@@ -580,7 +579,7 @@ span.biblio_isbn {
 }
 
 .watercolors_modal__btn span {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     color: var(--neutral-400);
 }
 
@@ -591,15 +590,9 @@ span.biblio_isbn {
 /* 
     Cine
 */
-.movies_header {
-    width: 100%;
-    height: 50%;
-    padding: 8rem;
+.page_header.movies_header {
     color: var(--neutral-50);
-    background: linear-gradient(rgb(72,0,72,0.5), rgb(192,72,72,0.5)), no-repeat 0 -34rem url("img/movies_header.jpg");
-    background-size: cover;
-    background-attachment:fixed;
-    background-blend-mode: lighten;
+    background: linear-gradient(rgb(72,0,72,0.5), rgb(192,72,72,0.5)), center / cover no-repeat fixed url("img/movies_header.jpg");
 }
 
 .movies_content {
@@ -844,16 +837,10 @@ span.biblio_isbn {
 /* 
 Entrevista
 */
-.interview_header {
-    width: 100%;
-    height: 50%;
-    padding: 8rem;
+.page_header.interview_header {
     color: var(--neutral-50);
-    background: linear-gradient(rgb(72,0,72,0.5), rgb(192,72,72,0.5)), no-repeat center -25rem url("img/interview_header.jpg");
-    background-size: cover;
-    background-attachment:fixed;
+    background: linear-gradient(rgb(72,0,72,0.5), rgb(192,72,72,0.5)), center / cover no-repeat fixed url("img/interview_header.jpg");
 }
-
 
 .interview_content {
     width: 100%;
@@ -898,11 +885,70 @@ Entrevista
     margin: 2.8rem auto;
 }
 
+/* 
+    @media queries
+    --------------
+*/
+
+/*
+    Tablet
+    ------
+*/    
+@media screen and (min-width: 1024px) {
+
+    .bio_main_container, .biblio_main_container {
+        padding: 2.4rem;
+    }
+
+    .biblio_main_container {
+        position: relative;
+        display: flex;
+    }
+
+    /* Bibliografia */
+    #bookPopup {
+        position: sticky;
+        top: 6rem;
+        left: 0;
+        transform: translate(0, 0);
+        height: 100%;
+        width: 80%;
+        padding: 1.2rem .8rem;
+    }
+
+    .watercolors_grid {
+        margin: 2rem;
+        gap: 5rem;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .movie_card {
+        display: flex;
+        height: 20rem;
+    }
+
+    .movie_card__img {
+        flex: 0 0 30%;
+        height: 100%;
+        background-size: cover;
+    }
+
+    .movie_card_content {
+        padding-left: 2rem;
+        height: 100%;
+    }
+
+    .movie_card_credits span:not(:first-of-type) {
+        font-size: .9rem;
+    }
+
+}
 
 /*
     Desktop
+    -------
 */    
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
     /* Navbar */
     #navbar_logo {
         width: 150px;
@@ -913,6 +959,10 @@ Entrevista
         position: relative;
         background: none;
         backdrop-filter: none;
+    }
+
+    .nav_items {
+        font-size: .8rem;
     }
 
     #nav_menu + .nav_items {
@@ -948,12 +998,11 @@ Entrevista
         display: block;
     }
 
-    .nav_items {
-        font-size: .8rem;
-
+    /* Home */
+    .home_header__heading h1 {
+        margin-top: 18rem;
     }
 
-    /* Home */
     .home_header__heading h2 {
         margin: 0 auto;
         font-size: 2.4rem;
@@ -982,21 +1031,14 @@ Entrevista
         padding: 0 5rem;
     }
 
+    #bookPopup {
+        width: 25%;
+        height: 30%;
+    }
+
     /* Biografia */
     .sticky_sidebar {
         display: block;
-    }
-
-
-    /* Bibliografia */
-    #bookPopup {
-        position: sticky;
-        top: 6rem;
-        left: 0;
-        transform: translate(0, 0);
-        height: 30%;
-        width: 25%;
-        padding: 1.2rem .8rem;
     }
 
     /* Acuarelas */
@@ -1011,8 +1053,6 @@ Entrevista
     }
 
     .watercolors_grid {
-        margin: 2rem;
-        gap: 5rem;
         grid-template-columns: repeat(4, 1fr);
     }
 
@@ -1020,6 +1060,10 @@ Entrevista
         margin: 2.4rem auto;
         width: 80%;
         height: 90%;
+    }
+
+    .watercolors_modal__btn span {
+        font-size: 1.2rem;
     }
 
     /* Cine */
@@ -1031,7 +1075,7 @@ Entrevista
         width: 60%;
     }
 
-    .movie_card {
+    /* .movie_card {
         display: flex;
         height: 20rem;
     }
@@ -1049,7 +1093,7 @@ Entrevista
 
     .movie_card_credits span:not(:first-of-type) {
         font-size: .9rem;
-    }
+    } */
 
     /* Entrevista */
     .interview_content {

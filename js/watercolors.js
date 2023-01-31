@@ -15,6 +15,8 @@ function makeModal(target) {
     modalTxt.innerText = txt
     modal.style.display = "block"
     document.body.style.overflow = "hidden"
+    
+    document.addEventListener('keyup', checkKeyEvent)
 }
 
 // Oculto el modal
@@ -23,6 +25,7 @@ const closeModal = () => {
     modalTxt.innerText = null
     modal.style.display = "none"
     document.body.style.overflow = "auto"
+    document.removeEventListener('keyup', checkKeyEvent)
 }
 
 // Llamo a función para generar modal y su contenido al clickear cualquier thumbnail
@@ -37,4 +40,9 @@ closeBtn.onclick = () => closeModal()
 // ...si el usuario clickea fuera de su contenedor
 window.onclick = function(event) {
     if (event.target == modal) closeModal()
+}
+
+// ...si el usuario presiona la tecla escape
+const checkKeyEvent = (e) => {
+    if (e.key == 'Escape') closeModal()
 }

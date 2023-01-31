@@ -24,10 +24,10 @@ let isMobile = window.innerWidth < 1200
 window.onresize = () => {
     isMobile = window.innerWidth < 1200
 
-    if(isMobile) {
-        setNavLinksLight()
-    } else {
+    if(!isMobile) {
         setNavLinksDark()
+    } else {
+        setNavLinksLight()
     }
 }
 
@@ -47,11 +47,12 @@ const setNavLinksDark = () => {
     }
 }
 
+const logo = document.getElementById('navbar_logo');
+
 // Esconder/mostrar navbar al scrollear
 window.onscroll = function(e) { 
     const scrollY = window.pageYOffset || document.documentElement.scrollTop;
     const navbar = document.getElementById('navbar');
-    const logo = document.getElementById('navbar_logo');
     const burgerMenu = document.querySelector('.navbar_toggle_btn')
 
     const navAnimIn = () => {
@@ -110,8 +111,10 @@ const toggleNavbarVisibility = () => {
 
     if(isNavbarExpanded) {
         document.body.style.overflow = "hidden"
+        logo.src = './img/Henry_Miller_signature_zinc-200.svg'
     } else {
         document.body.style.overflow = "auto"
+        logo.src = './img/Henry_Miller_signature.svg'
     }
 }
 
